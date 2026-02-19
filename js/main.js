@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // -------- DROPDOWN MENU (mobile toggle) --------
+    // -------- DROPDOWN MENU --------
     const dropdownToggles = document.querySelectorAll('.nav-dropdown > .nav-link');
     const isMobile = () => window.innerWidth <= 768;
 
@@ -259,10 +259,31 @@ document.addEventListener('DOMContentLoaded', () => {
         toggle.addEventListener('click', (e) => {
             if (isMobile()) {
                 e.preventDefault();
+                e.stopPropagation();
                 const parent = toggle.closest('.nav-dropdown');
-                parent.classList.toggle('open');
+                const wasOpen = parent.classList.contains('open');
+
+                // Close all dropdowns first
+                document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+
+                // Toggle current
+                if (!wasOpen) {
+                    parent.classList.add('open');
+                }
             }
         });
+    });
+
+    // Close dropdowns when clicking outside (mobile)
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown')) {
+            document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+        }
+    });
+
+    // Close all dropdowns when resizing from mobile to desktop
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
     });
 
     // -------- FORM VALIDATION ENHANCEMENT --------
