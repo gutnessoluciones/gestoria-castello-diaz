@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Herramientas gratuitas para trámites de tráfico. Calculadora del Impuesto de Transmisiones Patrimoniales (ITP), valor fiscal de vehículos y documentación necesaria.">
+    <title>Herramientas | Calculadora ITP y Valor de Vehículos | Gestoría Castelló Díaz</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header" class="header header-inner">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-inner">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="img/logo.png" alt="Gestoría Castelló Díaz" class="navbar-logo">
+                    </a>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" class="nav-link">Inicio</a></li>
+                        <li><a href="index.html#sobre-nosotros" class="nav-link">Nosotros</a></li>
+                        <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+                        <li class="nav-dropdown">
+                            <a href="tramites-dgt.html" class="nav-link">Trámites DGT <i data-lucide="chevron-down" class="icon-sm"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header">Cambios de Titularidad</li>
+                                <li><a href="tramites/transferencia-coche.html">Transferencia de Coche</a></li>
+                                <li><a href="tramites/transferencia-moto.html">Transferencia de Moto</a></li>
+                                <li><a href="tramites/transferencia-ciclomotor.html">Transferencia de Ciclomotor</a></li>
+                                <li><a href="tramites/notificacion-venta.html">Notificación de Venta</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-header">Otros Trámites</li>
+                                <li><a href="tramites/matriculacion.html">Matriculación de Vehículos</a></li>
+                                <li><a href="tramites/informes-trafico.html">Informe de Tráfico DGT</a></li>
+                                <li><a href="tramites/distintivo-medioambiental.html">Distintivo Medioambiental</a></li>
+                                <li><a href="tramites/baja-vehiculo.html">Baja de Vehículo</a></li>
+                                <li><a href="tramites/duplicados.html">Duplicados de Permisos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="herramientas.html" class="nav-link active">Herramientas <i data-lucide="chevron-down" class="icon-sm"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#calculadora-itp">Calculadora ITP</a></li>
+                                <li><a href="#valor-vehiculo">Valor de Vehículo</a></li>
+                                <li><a href="#documentacion">Documentación Necesaria</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                    </ul>
+                    <a href="index.html#contacto" class="btn btn-primary btn-nav">Pedir Cita</a>
+                    <button class="hamburger" id="hamburger" aria-label="Menú">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Inicio</a> <span>/</span> <span class="current">Herramientas</span>
+            </nav>
+            <h1>Herramientas <span class="text-accent">Gratuitas</span></h1>
+            <p>Calculadoras, tablas de valor y documentación necesaria para sus trámites de tráfico.</p>
+        </div>
+    </section>
+
+    <!-- CALCULADORA ITP -->
+    <section id="calculadora-itp" class="section">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-badge">Calculadora</span>
+                <h2 class="section-title">Calculadora del <span class="text-accent">ITP</span></h2>
+                <p class="section-subtitle">Calcule de forma orientativa el Impuesto de Transmisiones Patrimoniales que deberá abonar en la compra de un vehículo de segunda mano.</p>
+            </div>
+            <div class="tool-grid" data-animate>
+                <div class="tool-card tool-calculator">
+                    <h3><i data-lucide="calculator"></i> Calculadora ITP</h3>
+                    <p class="tool-desc">El ITP (Impuesto de Transmisiones Patrimoniales) es un impuesto autonómico que se aplica en la compraventa de vehículos usados entre particulares. El tipo impositivo varía según la Comunidad Autónoma.</p>
+                    
+                    <div class="calc-form">
+                        <div class="calc-row">
+                            <div class="calc-field">
+                                <label for="ccaa">Comunidad Autónoma</label>
+                                <select id="ccaa">
+                                    <option value="4">Andalucía (4%)</option>
+                                    <option value="4">Aragón (4%)</option>
+                                    <option value="4">Asturias (4%)</option>
+                                    <option value="4">Baleares (4%)</option>
+                                    <option value="5.5">Canarias (5,5%)</option>
+                                    <option value="4">Cantabria (4%)</option>
+                                    <option value="6">Castilla-La Mancha (6%)</option>
+                                    <option value="5">Castilla y León (5%)</option>
+                                    <option value="5">Cataluña (5%)</option>
+                                    <option value="6">Extremadura (6%)</option>
+                                    <option value="3">Galicia (3%)</option>
+                                    <option value="4">La Rioja (4%)</option>
+                                    <option value="4">Madrid (4%)</option>
+                                    <option value="4">Murcia (4%)</option>
+                                    <option value="4">Navarra (4%)</option>
+                                    <option value="4">País Vasco (4%)</option>
+                                    <option value="6">Comunidad Valenciana (6%)</option>
+                                </select>
+                            </div>
+                            <div class="calc-field">
+                                <label for="vendedor">Tipo de vendedor</label>
+                                <select id="vendedor">
+                                    <option value="particular">Particular</option>
+                                    <option value="empresa">Empresa (sin ITP, con IVA)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="calc-row">
+                            <div class="calc-field">
+                                <label for="valorVehiculo">Valor del vehículo (€)</label>
+                                <input type="number" id="valorVehiculo" placeholder="Ej: 8000" min="0" step="100">
+                                <small>Introduzca el valor de compraventa o el valor fiscal (el mayor de los dos)</small>
+                            </div>
+                            <div class="calc-field">
+                                <label for="cilindrada">Cilindrada (cc) <span class="optional">(opcional)</span></label>
+                                <input type="number" id="cilindrada" placeholder="Ej: 1600" min="0">
+                            </div>
+                        </div>
+                        <button type="button" id="calcularITP" class="btn btn-primary btn-lg btn-block">
+                            <i data-lucide="calculator"></i> Calcular ITP
+                        </button>
+                    </div>
+
+                    <div id="resultadoITP" class="calc-result" style="display:none;">
+                        <h4>Resultado del cálculo</h4>
+                        <div class="result-grid">
+                            <div class="result-item">
+                                <span class="result-label">Base imponible</span>
+                                <span class="result-value" id="resBase">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Tipo impositivo</span>
+                                <span class="result-value" id="resTipo">-</span>
+                            </div>
+                            <div class="result-item result-total">
+                                <span class="result-label">ITP a pagar</span>
+                                <span class="result-value" id="resITP">-</span>
+                            </div>
+                        </div>
+                        <p class="result-disclaimer">* Este cálculo es orientativo. El importe definitivo se determinará según el valor fiscal del vehículo determinado por la administración tributaria correspondiente. Consulte con nuestra gestoría para un cálculo exacto.</p>
+                        <a href="index.html#contacto" class="btn btn-primary">Solicitar trámite completo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALOR VEHÍCULO -->
+    <section id="valor-vehiculo" class="section section-alt">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-badge">Tablas de Valor</span>
+                <h2 class="section-title">Valor Fiscal del <span class="text-accent">Vehículo</span></h2>
+                <p class="section-subtitle">Información sobre cómo se determina el valor fiscal de un vehículo para el cálculo del ITP.</p>
+            </div>
+            <div class="info-content" data-animate>
+                <div class="info-card">
+                    <h3><i data-lucide="info"></i> ¿Qué es el valor fiscal?</h3>
+                    <p>El valor fiscal de un vehículo es el valor mínimo por el que la administración tributaria calcula el Impuesto de Transmisiones Patrimoniales (ITP). Este valor lo establece Hacienda y depende de varios factores:</p>
+                    <ul class="info-list">
+                        <li><i data-lucide="check"></i> <strong>Marca, modelo y versión</strong> del vehículo</li>
+                        <li><i data-lucide="check"></i> <strong>Año de matriculación:</strong> Se aplican porcentajes de depreciación según antigüedad</li>
+                        <li><i data-lucide="check"></i> <strong>Cilindrada y potencia</strong> del motor</li>
+                        <li><i data-lucide="check"></i> <strong>Combustible:</strong> Gasolina, diésel, eléctrico, híbrido</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3><i data-lucide="trending-down"></i> Porcentajes de depreciación</h3>
+                    <p>La Hacienda Pública aplica los siguientes porcentajes sobre el valor original del vehículo según su antigüedad:</p>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Antigüedad</th>
+                                    <th>% sobre valor nuevo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Hasta 1 año</td><td>100%</td></tr>
+                                <tr><td>De 1 a 2 años</td><td>84%</td></tr>
+                                <tr><td>De 2 a 3 años</td><td>67%</td></tr>
+                                <tr><td>De 3 a 5 años</td><td>56%</td></tr>
+                                <tr><td>De 5 a 7 años</td><td>45%</td></tr>
+                                <tr><td>De 7 a 10 años</td><td>34%</td></tr>
+                                <tr><td>De 10 a 12 años</td><td>28%</td></tr>
+                                <tr><td>Más de 12 años</td><td>19%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="info-card highlight-card">
+                    <h3><i data-lucide="lightbulb"></i> ¿Necesita conocer el valor fiscal exacto de su vehículo?</h3>
+                    <p>En Gestoría Castelló Díaz le calculamos el valor fiscal exacto de su vehículo y le indicamos la cuantía del ITP a pagar. Consúltenos sin compromiso.</p>
+                    <a href="index.html#contacto" class="btn btn-primary">Consultar sin compromiso</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOCUMENTACIÓN -->
+    <section id="documentacion" class="section">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-badge">Documentación</span>
+                <h2 class="section-title">Documentación <span class="text-accent">Necesaria</span></h2>
+                <p class="section-subtitle">Consulte qué documentos necesita según el tipo de trámite que desea realizar.</p>
+            </div>
+            <div class="docs-grid" data-animate>
+                <!-- Transferencia -->
+                <div class="doc-card">
+                    <div class="doc-header">
+                        <i data-lucide="repeat"></i>
+                        <h3>Transferencia de Vehículo</h3>
+                    </div>
+                    <ul class="doc-list">
+                        <li><i data-lucide="file-text"></i> DNI del comprador (original o copia)</li>
+                        <li><i data-lucide="file-text"></i> DNI del vendedor (original o copia)</li>
+                        <li><i data-lucide="file-text"></i> Permiso de circulación del vehículo</li>
+                        <li><i data-lucide="file-text"></i> Ficha técnica / Tarjeta ITV</li>
+                        <li><i data-lucide="file-text"></i> Contrato de compraventa</li>
+                        <li><i data-lucide="file-text"></i> Mandatos de representación</li>
+                    </ul>
+                    <a href="tramites/transferencia-coche.html" class="doc-link">Ver trámite completo <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <!-- Informe -->
+                <div class="doc-card">
+                    <div class="doc-header">
+                        <i data-lucide="search"></i>
+                        <h3>Informe de la DGT</h3>
+                    </div>
+                    <ul class="doc-list">
+                        <li><i data-lucide="file-text"></i> DNI del solicitante</li>
+                        <li><i data-lucide="file-text"></i> Matrícula del vehículo</li>
+                    </ul>
+                    <a href="tramites/informes-trafico.html" class="doc-link">Ver trámite completo <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <!-- Matriculación -->
+                <div class="doc-card">
+                    <div class="doc-header">
+                        <i data-lucide="plus-circle"></i>
+                        <h3>Matriculación</h3>
+                    </div>
+                    <ul class="doc-list">
+                        <li><i data-lucide="file-text"></i> DNI del titular</li>
+                        <li><i data-lucide="file-text"></i> Factura de compra / DAU</li>
+                        <li><i data-lucide="file-text"></i> Ficha técnica</li>
+                        <li><i data-lucide="file-text"></i> Certificado de conformidad</li>
+                        <li><i data-lucide="file-text"></i> Justificante pago IEDMT</li>
+                    </ul>
+                    <a href="tramites/matriculacion.html" class="doc-link">Ver trámite completo <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <!-- Baja -->
+                <div class="doc-card">
+                    <div class="doc-header">
+                        <i data-lucide="x-circle"></i>
+                        <h3>Baja de Vehículo</h3>
+                    </div>
+                    <ul class="doc-list">
+                        <li><i data-lucide="file-text"></i> DNI del titular</li>
+                        <li><i data-lucide="file-text"></i> Permiso de circulación</li>
+                        <li><i data-lucide="file-text"></i> Ficha técnica</li>
+                        <li><i data-lucide="file-text"></i> Certificado de destrucción (baja definitiva)</li>
+                    </ul>
+                    <a href="tramites/baja-vehiculo.html" class="doc-link">Ver trámite completo <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <!-- Distintivo -->
+                <div class="doc-card">
+                    <div class="doc-header">
+                        <i data-lucide="leaf"></i>
+                        <h3>Distintivo Medioambiental</h3>
+                    </div>
+                    <ul class="doc-list">
+                        <li><i data-lucide="file-text"></i> DNI del titular</li>
+                        <li><i data-lucide="file-text"></i> Permiso de circulación</li>
+                    </ul>
+                    <a href="tramites/distintivo-medioambiental.html" class="doc-link">Ver trámite completo <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <!-- Duplicados -->
+                <div class="doc-card">
+                    <div class="doc-header">
+                        <i data-lucide="copy"></i>
+                        <h3>Duplicados</h3>
+                    </div>
+                    <ul class="doc-list">
+                        <li><i data-lucide="file-text"></i> DNI del titular</li>
+                        <li><i data-lucide="file-text"></i> Denuncia (en caso de robo)</li>
+                        <li><i data-lucide="file-text"></i> Documento deteriorado (si aplica)</li>
+                    </ul>
+                    <a href="tramites/duplicados.html" class="doc-link">Ver trámite completo <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Descargas -->
+            <div class="downloads-section" data-animate>
+                <h3><i data-lucide="download"></i> Documentos descargables</h3>
+                <p>Descargue los modelos de documentos necesarios para sus trámites:</p>
+                <div class="downloads-grid">
+                    <div class="download-item">
+                        <i data-lucide="file-text"></i>
+                        <div>
+                            <strong>Contrato de Compraventa</strong>
+                            <span>Modelo estándar para compraventa entre particulares</span>
+                        </div>
+                        <a href="index.html#contacto" class="btn btn-outline btn-sm">Solicitar</a>
+                    </div>
+                    <div class="download-item">
+                        <i data-lucide="file-text"></i>
+                        <div>
+                            <strong>Mandato de Representación</strong>
+                            <span>Autorización para que tramitemos en su nombre</span>
+                        </div>
+                        <a href="index.html#contacto" class="btn btn-outline btn-sm">Solicitar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+        <div class="container">
+            <div class="cta-band-inner">
+                <div class="cta-band-text">
+                    <h2>¿Necesita ayuda con su trámite?</h2>
+                    <p>Contacte con nosotros para un presupuesto sin compromiso.</p>
+                </div>
+                <div class="cta-band-actions">
+                    <a href="tel:955684813" class="btn btn-white btn-lg">
+                        <i data-lucide="phone"></i> 955 684 813
+                    </a>
+                    <a href="index.html#contacto" class="btn btn-outline-white btn-lg">
+                        <i data-lucide="mail"></i> Escríbanos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="img/logo.png" alt="Gestoría Castelló Díaz" class="footer-logo">
+                    <p>Gestoría Castelló Díaz, su despacho profesional de confianza en Alcalá de Guadaíra.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Trámites DGT</h4>
+                    <ul>
+                        <li><a href="tramites/transferencia-coche.html">Transferencia de Coche</a></li>
+                        <li><a href="tramites/transferencia-moto.html">Transferencia de Moto</a></li>
+                        <li><a href="tramites/informes-trafico.html">Informe de Tráfico</a></li>
+                        <li><a href="tramites/distintivo-medioambiental.html">Distintivo Medioambiental</a></li>
+                        <li><a href="tramites/matriculacion.html">Matriculaciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="herramientas.html">Herramientas</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                        <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                        <li><a href="privacidad.html">Privacidad</a></li>
+                        <li><a href="cookies.html">Cookies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="footer-contact">
+                        <li><i data-lucide="map-pin" class="icon-sm"></i> C/ Alcalá y Orti nº 56, Bajo<br>41500 Alcalá de Guadaíra</li>
+                        <li><i data-lucide="phone" class="icon-sm"></i> <a href="tel:955684813">955 684 813</a></li>
+                        <li><i data-lucide="mail" class="icon-sm"></i> <a href="mailto:gestoria-castello@hotmail.com">gestoria-castello@hotmail.com</a></li>
+                        <li><i data-lucide="clock" class="icon-sm"></i> L-V: 9:30-14:00 / 17:30-20:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gestoría Castelló Díaz. Todos los derechos reservados.</p>
+                <p class="footer-legal">
+                    <a href="aviso-legal.html">Aviso Legal</a> |
+                    <a href="privacidad.html">Privacidad</a> |
+                    <a href="cookies.html">Cookies</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a href="https://api.whatsapp.com/send/?phone=34955684813&text=Hola%2C%20necesito%20informaci%C3%B3n.&type=phone_number&app_absent=0" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.132 6.744 3.052 9.38L1.056 31.2l6.064-1.952C9.62 30.96 12.7 32 16.004 32 24.828 32 32 24.824 32 16S24.828 0 16.004 0zm9.34 22.616c-.392 1.1-1.932 2.016-3.148 2.28-.832.18-1.916.324-5.572-1.196-4.676-1.944-7.688-6.692-7.924-7.004-.224-.312-1.888-2.512-1.888-4.792s1.196-3.4 1.62-3.868c.424-.468.924-.584 1.232-.584.308 0 .616.004.884.016.284.012.664-.108.94.716.32.828 1.064 2.612 1.156 2.8.096.192.16.416.032.668-.128.26-.192.416-.384.644-.192.22-.404.496-.576.668-.192.192-.392.4-.168.784.224.384.996 1.644 2.14 2.664 1.472 1.312 2.712 1.716 3.096 1.908.384.192.608.16.832-.096.224-.26.96-1.116 1.216-1.5.256-.384.512-.32.864-.192.352.128 2.232 1.052 2.616 1.244.384.192.64.288.736.448.092.16.092.928-.3 2.028z"/></svg>
+    </a>
+
+    <!-- COOKIE BANNER -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h4>Configuración de Cookies</h4>
+                <p>Utilizamos cookies propias y de terceros. Puede configurar sus preferencias a continuación.</p>
+            </div>
+            <div class="cookie-options">
+                <label class="cookie-option">
+                    <input type="checkbox" checked disabled> <span>Necesarias</span>
+                    <small>Imprescindibles para el funcionamiento del sitio</small>
+                </label>
+                <label class="cookie-option">
+                    <input type="checkbox" id="cookieAnalytics"> <span>Analíticas</span>
+                    <small>Nos ayudan a entender cómo se usa la web</small>
+                </label>
+            </div>
+            <div class="cookie-actions">
+                <button id="cookieAcceptAll" class="btn btn-primary">Aceptar todas</button>
+                <button id="cookieSavePrefs" class="btn btn-outline">Guardar preferencias</button>
+                <button id="cookieReject" class="btn btn-outline">Rechazar opcionales</button>
+            </div>
+            <p class="cookie-legal-link"><a href="cookies.html">Más información sobre cookies</a></p>
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" aria-label="Volver arriba">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <!-- Calculator Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const calcBtn = document.getElementById('calcularITP');
+        if (calcBtn) {
+            calcBtn.addEventListener('click', function() {
+                const ccaa = document.getElementById('ccaa');
+                const vendedor = document.getElementById('vendedor');
+                const valorInput = document.getElementById('valorVehiculo');
+                const tipo = parseFloat(ccaa.value);
+                const valor = parseFloat(valorInput.value);
+
+                if (vendedor.value === 'empresa') {
+                    document.getElementById('resultadoITP').style.display = 'block';
+                    document.getElementById('resBase').textContent = valor ? valor.toLocaleString('es-ES', {style:'currency', currency:'EUR'}) : '-';
+                    document.getElementById('resTipo').textContent = 'N/A (IVA 21%)';
+                    document.getElementById('resITP').textContent = valor ? (valor * 0.21).toLocaleString('es-ES', {style:'currency', currency:'EUR'}) + ' (IVA)' : '-';
+                    return;
+                }
+
+                if (!valor || valor <= 0) {
+                    alert('Por favor, introduzca un valor del vehículo válido.');
+                    return;
+                }
+
+                const itp = valor * (tipo / 100);
+                
+                document.getElementById('resultadoITP').style.display = 'block';
+                document.getElementById('resBase').textContent = valor.toLocaleString('es-ES', {style:'currency', currency:'EUR'});
+                document.getElementById('resTipo').textContent = tipo + '%';
+                document.getElementById('resITP').textContent = itp.toLocaleString('es-ES', {style:'currency', currency:'EUR'});
+
+                // Scroll to result
+                document.getElementById('resultadoITP').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        }
+    });
+    </script>
+</body>
+</html>

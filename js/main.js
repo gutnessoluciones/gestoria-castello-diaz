@@ -191,32 +191,79 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // -------- COOKIE BANNER --------
+    // -------- COOKIE BANNER (RGPD) --------
     const cookieBanner = document.getElementById('cookieBanner');
-    const cookieAccept = document.getElementById('cookieAccept');
+    const cookieAcceptAll = document.getElementById('cookieAcceptAll');
+    const cookieSavePrefs = document.getElementById('cookieSavePrefs');
     const cookieReject = document.getElementById('cookieReject');
+    const cookieAnalytics = document.getElementById('cookieAnalytics');
 
     if (cookieBanner) {
-        if (!localStorage.getItem('cookieConsent')) {
+        const consent = localStorage.getItem('cookieConsent');
+        if (!consent) {
             setTimeout(() => {
                 cookieBanner.classList.add('show');
-            }, 2000);
+            }, 1500);
         }
 
-        if (cookieAccept) {
-            cookieAccept.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'accepted');
-                cookieBanner.classList.remove('show');
+        function hideBanner() {
+            cookieBanner.classList.remove('show');
+        }
+
+        if (cookieAcceptAll) {
+            cookieAcceptAll.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'all');
+                localStorage.setItem('cookieAnalytics', 'true');
+                hideBanner();
+            });
+        }
+
+        if (cookieSavePrefs) {
+            cookieSavePrefs.addEventListener('click', () => {
+                const analytics = cookieAnalytics ? cookieAnalytics.checked : false;
+                localStorage.setItem('cookieConsent', 'custom');
+                localStorage.setItem('cookieAnalytics', analytics.toString());
+                hideBanner();
             });
         }
 
         if (cookieReject) {
             cookieReject.addEventListener('click', () => {
                 localStorage.setItem('cookieConsent', 'rejected');
-                cookieBanner.classList.remove('show');
+                localStorage.setItem('cookieAnalytics', 'false');
+                hideBanner();
             });
         }
     }
+
+    // -------- FAQ ACCORDION --------
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.faq-item');
+            const isActive = item.classList.contains('active');
+            // Close all
+            document.querySelectorAll('.faq-item.active').forEach(i => i.classList.remove('active'));
+            // Toggle current
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // -------- DROPDOWN MENU (mobile toggle) --------
+    const dropdownToggles = document.querySelectorAll('.nav-dropdown > .nav-link');
+    const isMobile = () => window.innerWidth <= 768;
+
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            if (isMobile()) {
+                e.preventDefault();
+                const parent = toggle.closest('.nav-dropdown');
+                parent.classList.toggle('open');
+            }
+        });
+    });
 
     // -------- FORM VALIDATION ENHANCEMENT --------
     const contactForm = document.getElementById('contactForm');

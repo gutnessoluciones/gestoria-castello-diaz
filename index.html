@@ -66,12 +66,35 @@
                         <img src="img/logo.png" alt="Gestoría Castelló Díaz" class="navbar-logo">
                     </a>
                     <ul class="nav-menu" id="navMenu">
-                        <li><a href="#hero" class="nav-link active">Inicio</a></li>
-                        <li><a href="#sobre-nosotros" class="nav-link">Nosotros</a></li>
-                        <li><a href="#servicios" class="nav-link">Servicios</a></li>
-                        <li><a href="#por-que-nosotros" class="nav-link">Ventajas</a></li>
-                        <li><a href="#tramites" class="nav-link">Trámites</a></li>
-                        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                        <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                        <li><a href="index.html#sobre-nosotros" class="nav-link">Nosotros</a></li>
+                        <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+                        <li class="nav-dropdown">
+                            <a href="tramites-dgt.html" class="nav-link">Trámites DGT <i data-lucide="chevron-down" class="icon-sm"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header">Cambios de Titularidad</li>
+                                <li><a href="tramites/transferencia-coche.html">Transferencia de Coche</a></li>
+                                <li><a href="tramites/transferencia-moto.html">Transferencia de Moto</a></li>
+                                <li><a href="tramites/transferencia-ciclomotor.html">Transferencia de Ciclomotor</a></li>
+                                <li><a href="tramites/notificacion-venta.html">Notificación de Venta</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-header">Otros Trámites</li>
+                                <li><a href="tramites/matriculacion.html">Matriculación de Vehículos</a></li>
+                                <li><a href="tramites/informes-trafico.html">Informe de Tráfico DGT</a></li>
+                                <li><a href="tramites/distintivo-medioambiental.html">Distintivo Medioambiental</a></li>
+                                <li><a href="tramites/baja-vehiculo.html">Baja de Vehículo</a></li>
+                                <li><a href="tramites/duplicados.html">Duplicados de Permisos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="herramientas.html" class="nav-link">Herramientas <i data-lucide="chevron-down" class="icon-sm"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="herramientas.html#calculadora-itp">Calculadora ITP</a></li>
+                                <li><a href="herramientas.html#valor-vehiculo">Valor de Vehículo</a></li>
+                                <li><a href="herramientas.html#documentacion">Documentación Necesaria</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
                     </ul>
                     <a href="#contacto" class="btn btn-primary btn-nav">Pedir Cita</a>
                     <button class="hamburger" id="hamburger" aria-label="Menú">
@@ -99,25 +122,29 @@
                     Más de 20 años gestionando los trámites de Tráfico, Transportes, Escrituras y Declaraciones de Renta para particulares y empresas de Alcalá y toda la provincia de Sevilla.
                 </p>
                 <div class="hero-actions">
-                    <a href="#servicios" class="btn btn-primary btn-lg">
-                        <i data-lucide="briefcase"></i> Nuestros Servicios
+                    <a href="tramites-dgt.html" class="btn btn-primary btn-lg">
+                        <i data-lucide="briefcase"></i> Trámites DGT
                     </a>
                     <a href="tel:955684813" class="btn btn-outline btn-lg">
                         <i data-lucide="phone"></i> Llámanos: 955 684 813
                     </a>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="20">0</span><span class="stat-plus">+</span>
-                        <span class="stat-label">Años de experiencia</span>
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <i data-lucide="shield-check"></i>
+                        <span>Gestores Colegiados</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="5000">0</span><span class="stat-plus">+</span>
-                        <span class="stat-label">Clientes satisfechos</span>
+                    <div class="trust-item">
+                        <i data-lucide="clock"></i>
+                        <span>Sin Cita Previa</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="15000">0</span><span class="stat-plus">+</span>
-                        <span class="stat-label">Trámites realizados</span>
+                    <div class="trust-item">
+                        <i data-lucide="monitor"></i>
+                        <span>Trámites Online</span>
+                    </div>
+                    <div class="trust-item">
+                        <i data-lucide="map-pin"></i>
+                        <span>Alcalá de Guadaíra</span>
                     </div>
                 </div>
             </div>
@@ -568,11 +595,26 @@
     <!-- ===================== COOKIE BANNER ===================== -->
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-content">
-            <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios. Si continúa navegando, consideramos que acepta su uso. Puede obtener más información en nuestra <a href="cookies.html">Política de Cookies</a>.</p>
-            <div class="cookie-actions">
-                <button id="cookieAccept" class="btn btn-primary">Aceptar</button>
-                <button id="cookieReject" class="btn btn-outline">Rechazar</button>
+            <div class="cookie-text">
+                <h4>Configuración de Cookies</h4>
+                <p>Utilizamos cookies propias y de terceros. Puede configurar sus preferencias a continuación.</p>
             </div>
+            <div class="cookie-options">
+                <label class="cookie-option">
+                    <input type="checkbox" checked disabled> <span>Necesarias</span>
+                    <small>Imprescindibles para el funcionamiento del sitio</small>
+                </label>
+                <label class="cookie-option">
+                    <input type="checkbox" id="cookieAnalytics"> <span>Analíticas</span>
+                    <small>Nos ayudan a entender cómo se usa la web</small>
+                </label>
+            </div>
+            <div class="cookie-actions">
+                <button id="cookieAcceptAll" class="btn btn-primary">Aceptar todas</button>
+                <button id="cookieSavePrefs" class="btn btn-outline">Guardar preferencias</button>
+                <button id="cookieReject" class="btn btn-outline">Rechazar opcionales</button>
+            </div>
+            <p class="cookie-legal-link"><a href="cookies.html">Más información sobre cookies</a></p>
         </div>
     </div>
 
