@@ -351,12 +351,35 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-brand {
     display: flex;
     align-items: center;
+    gap: var(--space-sm);
 }
 
 .navbar-logo {
     height: 55px;
     width: auto;
     transition: var(--transition);
+}
+
+.brand-text {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    line-height: 1.2;
+    color: var(--gray-700);
+    letter-spacing: 0.02em;
+}
+
+.brand-text strong {
+    font-size: var(--text-base);
+    color: var(--primary);
+    display: block;
+}
+
+.header.scrolled .brand-text {
+    font-size: var(--text-xs);
+}
+
+.header.scrolled .brand-text strong {
+    font-size: var(--text-sm);
 }
 
 .nav-menu {
@@ -1747,6 +1770,10 @@ h1, h2, h3, h4, h5, h6 {
 
     .navbar-logo {
         height: 42px;
+    }
+
+    .brand-text {
+        display: none;
     }
 
     .section-title {
