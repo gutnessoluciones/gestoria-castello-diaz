@@ -38,6 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', handleHeaderScroll, { passive: true });
 
+    // -------- UTILS --------
+    const isMobile = () => window.innerWidth <= 768;
+
     // -------- MOBILE MENU --------
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
@@ -48,13 +51,32 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('open');
             document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
+            // Close any open dropdowns when closing menu
+            if (!navMenu.classList.contains('open')) {
+                document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+            }
         });
 
+        // Close menu when clicking a regular nav link (NOT dropdown toggles)
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
+                // Don't close if this link is a dropdown parent toggle on mobile
+                if (link.closest('.nav-dropdown') && link.parentElement.classList.contains('nav-dropdown') && isMobile()) {
+                    return; // Let the dropdown handler manage this
+                }
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('open');
                 document.body.style.overflow = '';
+            });
+        });
+
+        // Close menu when clicking a dropdown sub-item link
+        navMenu.querySelectorAll('.dropdown-menu a').forEach(subLink => {
+            subLink.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('open');
+                document.body.style.overflow = '';
+                document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
             });
         });
     }
@@ -253,7 +275,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // -------- DROPDOWN MENU --------
     const dropdownToggles = document.querySelectorAll('.nav-dropdown > .nav-link');
-    const isMobile = () => window.innerWidth <= 768;
 
     dropdownToggles.forEach(toggle => {
         toggle.addEventListener('click', (e) => {
