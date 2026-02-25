@@ -825,6 +825,99 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
+   ACREDITACIÓN SECTION
+   ============================================ */
+.section-acreditacion {
+    padding: var(--space-2xl) 0;
+    background: var(--light-bg);
+}
+
+.acreditacion-inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    background: var(--white);
+    padding: var(--space-2xl) var(--space-3xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+    border-left: 4px solid var(--primary);
+}
+
+.acreditacion-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.acreditacion-icon svg {
+    width: 30px;
+    height: 30px;
+    color: var(--primary);
+}
+
+.acreditacion-content {
+    flex: 1;
+}
+
+.acreditacion-content h3 {
+    font-size: var(--text-lg);
+    color: var(--gray-900);
+    margin-bottom: var(--space-xs);
+    font-family: var(--font-heading);
+}
+
+.acreditacion-content p {
+    color: var(--gray-600);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.acreditacion-logos {
+    flex-shrink: 0;
+}
+
+.acreditacion-logo {
+    height: 55px;
+    width: auto;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.acreditacion-logo:hover {
+    opacity: 1;
+}
+
+.placa-img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 3px solid var(--gray-200);
+}
+
+@media (max-width: 768px) {
+    .acreditacion-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-xl);
+        gap: var(--space-md);
+        border-left: none;
+        border-top: 4px solid var(--primary);
+    }
+
+    .acreditacion-logos {
+        margin-top: var(--space-sm);
+    }
+}
+
+/* ============================================
    SERVICES SECTION
    ============================================ */
 .section-services {
