@@ -81,6 +81,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // -------- SMOOTH SCROLL WITHOUT HASH IN URL --------
+    // Intercept clicks on same-page anchor links to scroll without showing # in URL
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href').substring(1);
+            if (!targetId) return;
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+                e.preventDefault();
+                targetEl.scrollIntoView({ behavior: 'smooth' });
+                // Clean URL: remove hash without adding history entry
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+        });
+    });
+
     // -------- ACTIVE NAV LINK ON SCROLL --------
     const sections = document.querySelectorAll('section[id]');
 
