@@ -97,6 +97,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Clean hash from URL on page load (e.g. arriving from /#contacto)
+    if (window.location.hash) {
+        const hashTarget = document.getElementById(window.location.hash.substring(1));
+        if (hashTarget) {
+            // Let the browser scroll to the anchor first, then clean URL
+            requestAnimationFrame(() => {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+            });
+        }
+    }
+
     // -------- ACTIVE NAV LINK ON SCROLL --------
     const sections = document.querySelectorAll('section[id]');
 
