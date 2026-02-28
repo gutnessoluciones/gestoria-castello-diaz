@@ -512,21 +512,6 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
 }
 
-.hero-wave {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    z-index: 3;
-    line-height: 0;
-}
-
-.hero-wave svg {
-    display: block;
-    width: 100%;
-    height: 80px;
-}
-
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -1765,6 +1750,36 @@ h1, h2, h3, h4, h5, h6 {
 .legal-page ul {
     padding-left: var(--space-xl);
     list-style: disc;
+}
+
+.legal-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: var(--space-lg);
+}
+
+.legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 680px;
+    background: var(--white);
+}
+
+.legal-table th,
+.legal-table td {
+    text-align: left;
+    vertical-align: top;
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid var(--gray-200);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--gray-700);
+}
+
+.legal-table thead th {
+    color: var(--gray-900);
+    font-weight: 700;
+    border-bottom: 2px solid var(--gray-300);
 }
 
 /* ============================================
