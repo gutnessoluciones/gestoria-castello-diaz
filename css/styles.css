@@ -886,6 +886,12 @@ h1, h2, h3, h4, h5, h6 {
     transition: var(--transition);
 }
 
+.acreditacion-logos .acreditacion-logo {
+    width: 120px;
+    max-width: 120px;
+    height: auto;
+}
+
 .acreditacion-logo:hover {
     opacity: 1;
 }
